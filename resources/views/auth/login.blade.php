@@ -133,7 +133,7 @@
                     <div class="mt-6 text-center">
                         <p class="font-medium">
                             Don’t have any account?
-                            <a href="#" class="text-primary">Register</a>
+                            <a href="{{ route('register') }}" class="text-primary">Register</a>
                         </p>
                     </div>
                 </form>
