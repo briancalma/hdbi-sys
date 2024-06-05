@@ -56,10 +56,10 @@ class User extends Authenticatable
     /**
      * Return the user role.
      *
-     * @return Role
+     * @return string
      */
-    public function role(): Role
+    public function getRoleNameAttribute(): string
     {
-        return $this->roles()->first();
+        return $this->roles()->first()->name;
     }
 }

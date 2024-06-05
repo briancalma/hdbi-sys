@@ -126,7 +126,7 @@
                     <span class="block text-sm font-medium text-black dark:text-white"
                     >{{ auth()->user()?->fullName }}</span
                     >
-                    <span class="block text-xs font-medium">{{ auth()->user()?->role }}</span>
+                    <span class="block text-xs font-medium">{{ auth()->user()?->roleName }}</span>
                 </span>
 
                 <span class="h-12 w-12 rounded-full">
