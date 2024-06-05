@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Root;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::where('id', '!=', auth()->user()->id)->paginate(10);
+
+        return view('root.users.index')->with(compact('users'));
     }
 
     /**
