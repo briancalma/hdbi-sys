@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Constants\Roles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -61,5 +63,20 @@ class User extends Authenticatable
     public function getRoleNameAttribute(): string
     {
         return $this->roles()->first()->name;
+    }
+
+    /**
+     * Return the redirect route based on the user role.
+     *
+     * @return string
+     */
+    public function getRedirectRoute(): string
+    {
+        return match ($this->getRoleNameAttribute()) {
+            Roles::INSPECTOR => '/inspector/dashboard',
+            Roles::ROOT => '/root/dashboard',
+            Roles::REAL_STATE_AGENT => '/real-state-agent/dashboard',
+            default => '/real-state-agent/dashboard',
+        };
     }
 }
