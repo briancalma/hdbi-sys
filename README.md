@@ -18,7 +18,7 @@ Before you can install and run this application, make sure you have the followin
 3. Copy the `.env.example` file to `.env` and configure your environment variables.
 4. Generate an application key: `php artisan key:generate`
 5. Run database migrations: `php artisan migrate:fresh --seed`
-6. Start the development server: `php artisan serve`
+6. Start the development server: `php artisan serve` or `php artisan serve --port=8080`
 7. Run the npm server: `npm run dev`
 
 ### Optional MySQL Setup
