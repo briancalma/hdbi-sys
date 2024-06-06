@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Inspector;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Inspector\CreateUserFormRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -23,15 +25,32 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('inspector.users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateUserFormRequest $request): RedirectResponse
     {
-        //
+        try {
+            $data = $request->validated();
+
+            $user = User::create([
+                'first_name' => $data['first_name'],
+                'last_name' => $data['last_name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+    
+            $user->assignRole($data['role']);
+    
+            return redirect()->route('inspector.users.index')->with('success', 'User created successfully.');
+        }
+        catch(\Exception $e) {
+            return redirect()->route('inspector.users.create')->with('error', 'Failed to create user.');
+        }
+       
     }
 
     /**

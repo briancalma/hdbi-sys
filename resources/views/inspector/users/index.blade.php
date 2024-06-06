@@ -10,7 +10,7 @@
     <!-- Breadcrumb Start -->
     <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 class="text-title-md2 font-bold text-black dark:text-white">System Users</h2>
-        <a href="{{ route('root.users.create') }}"   
+        <a href="{{ route('inspector.users.create') }}"   
             class="inline-flex items-center justify-center gap-2.5 rounded-md bg-meta-3 px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
             Add New Real Estate Agent
         </a>
