@@ -18,7 +18,7 @@ class RolesAndPermissionsTableSeeder extends Seeder
     {
         $rootRole = Role::create(['name' => Roles::ROOT]);
         $inspectorRole = Role::create(['name' => Roles::INSPECTOR]);
-        $realStateAgentRole = Role::create(['name' => Roles::REAL_STATE_AGENT]);
+        $realStateAgentRole = Role::create(['name' => Roles::REAL_ESTATE_AGENT]);
 
         $defaultPermissions = [
             ...Permissions::USER,

@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'last_name' => $faker->lastName,
                 'email' => $faker->unique()->safeEmail,
                 'password' => bcrypt('password'),
-                'role' => Roles::REAL_STATE_AGENT
+                'role' => Roles::REAL_ESTATE_AGENT
             ];
         
             $userData = collect($_user)->except('role')->toArray();
@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
                 'last_name' => 'Doe',
                 'email' => 'agent@hdbi.com',
                 'password' => bcrypt('password'),
-                'role' => Roles::REAL_STATE_AGENT
+                'role' => Roles::REAL_ESTATE_AGENT
             ], 
             [
                 'first_name' => 'Admin',

@@ -26,7 +26,7 @@ class CreateUserFormRequest extends FormRequest
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'email' => 'required|email|unique:users,email',
-            'role' => 'required|string|in:Root,Inspector,Real State Agent',
+            'role' => 'required|string|in:Root,Inspector,Real Estate Agent',
             'password' => 'required|string|min:8|confirmed',
         ];
     }

@@ -13,7 +13,7 @@ trait GetRedirectRouteBasedOnUserRole
      */
     public function getRedirectRouteBasedOnUserRole(User $user): string
     {
-        $redirectRoute = 'real-state-agent.dashboard';
+        $redirectRoute = 'real-estate-agent.dashboard';
 
         if ($user->hasRole('Root')) {
             

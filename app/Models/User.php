@@ -74,10 +74,10 @@ class User extends Authenticatable
     public function getRedirectRoute(): string
     {
         return match ($this->getRoleNameAttribute()) {
-            Roles::INSPECTOR => '/inspector/dashboard',
-            Roles::ROOT => '/root/dashboard',
-            Roles::REAL_STATE_AGENT => '/real-state-agent/dashboard',
-            default => '/real-state-agent/dashboard',
+            Roles::INSPECTOR => route('inspector.dashboard'),
+            Roles::ROOT => route('root.dashboard'),
+            Roles::REAL_ESTATE_AGENT => route('real-estate-agent.dashboard'),
+            default => route('real-estate-agent.dashboard'),
         };
     }
 }

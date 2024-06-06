@@ -5,5 +5,5 @@ class Roles
 {
     public const ROOT = 'Root';
     public const INSPECTOR = 'Inspector';
-    public const REAL_STATE_AGENT = 'Real State Agent';
+    public const REAL_ESTATE_AGENT = 'Real Estate Agent';
 }

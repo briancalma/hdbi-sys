@@ -75,7 +75,7 @@
                                 </option>
                                 <option value="Root" class="text-body" {{ old('role') === 'Root' ? 'selected' : '' }}>Root</option>
                                 <option value="Inspector" class="text-body" {{ old('role') === 'Inspector' ? 'selected' : '' }}>Inspector</option>
-                                <option value="Real State Agent" class="text-body" {{ old('role') === 'Real State Agent' ? 'selected' : '' }}>Real State Agent</option>
+                                <option value="Real Estate Agent" class="text-body" {{ old('role') === 'Real Estate Agent' ? 'selected' : '' }}>Real Estate Agent</option>
                             </select>
                             </select>
                         </div>

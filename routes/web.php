@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
 
     require __DIR__.'/root.php';
     require __DIR__.'/inspector.php';
-    require __DIR__.'/real_state_agent.php';
+    require __DIR__.'/real_estate_agent.php';
 });
 
 require __DIR__.'/auth.php';

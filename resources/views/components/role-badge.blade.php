@@ -5,7 +5,7 @@
     $classes = [
         'Root' => 'bg-[#212B36]',
         'Inspector' => 'bg-[#13C296]',
-        'Real State Agent' => 'bg-primary',
+        'Real Estate Agent' => 'bg-primary',
     ];
 
     $roleClasses = $classes[$roleName] ?? 'bg-primary';

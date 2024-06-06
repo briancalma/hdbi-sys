@@ -81,7 +81,7 @@
                                 </option>
                                 <option value="Root" class="text-body" {{ $user->roleName === 'Root' ? 'selected' : '' }}>Root</option>
                                 <option value="Inspector" class="text-body" {{ $user->roleName  === 'Inspector' ? 'selected' : '' }}>Inspector</option>
-                                <option value="Real State Agent" class="text-body" {{ $user->roleName  === 'Real State Agent' ? 'selected' : '' }}>Real State Agent</option>
+                                <option value="Real Estate Agent" class="text-body" {{ $user->roleName  === 'Real Estate Agent' ? 'selected' : '' }}>Real Estate Agent</option>
                             </select>
                         </div>
                     </div>
