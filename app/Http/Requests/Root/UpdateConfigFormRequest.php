@@ -5,7 +5,7 @@ namespace App\Http\Requests\Root;
 use App\Constants\Roles;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateConfigFormRequest extends FormRequest
+class UpdateConfigFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class CreateConfigFormRequest extends FormRequest
     {
         return [
             'key' => 'required|string|max:255',
-            'type' => 'required|string|in:string,integer,boolean',
+            'value' => 'required|string|max:255',
             'value' => ['required' ,'string' , 'max:255', new \App\Rules\ValueTypeMatchesTypeRule($this->input('type'))],
         ];
     }
