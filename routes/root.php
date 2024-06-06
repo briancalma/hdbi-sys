@@ -11,5 +11,5 @@ Route::group(['prefix' => 'root', 'as' => 'root.'], function () {
     Route::resource('users', UserController::class);
     
     // Configurations
-    Route::resource('configurations', ConfigurationController::class)->only(['index', 'store', 'update', 'delete']);
+    Route::resource('configurations', ConfigurationController::class);
 });

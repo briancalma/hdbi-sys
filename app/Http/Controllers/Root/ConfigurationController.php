@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Root;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Root\CreateConfigFormRequest;
+use App\Models\Configuration;
 use Illuminate\Http\Request;
+use PSpell\Config;
 
 class ConfigurationController extends Controller
 {
@@ -22,15 +25,24 @@ class ConfigurationController extends Controller
      */
     public function create()
     {
-        //
+        return view('root.configurations.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateConfigFormRequest $request)
     {
-        //
+        try {
+            $data = $request->validated();
+
+            $configuration = Configuration::create($data);
+    
+            return redirect()->route('root.configurations.index')->with('success', 'Config created successfully.');
+        }
+        catch(\Exception $e) {
+            return redirect()->route('root.configurations.create')->with('error', 'Failed to create config.');
+        }
     }
 
     /**
