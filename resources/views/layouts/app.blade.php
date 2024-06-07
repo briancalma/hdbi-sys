@@ -39,7 +39,20 @@
 
         <!-- ===== Main Content Start ===== -->
         <main>
-            @yield('content')
+            <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10"  x-data="{modalOpen: false, userId: null, modalType: ''}">
+                <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 class="text-title-md2 font-bold text-black dark:text-white">@yield('title')</h2>
+
+                    @yield('action')
+                </div>
+                <div class="flex flex-col gap-9">
+                    @include('components.alert-success')
+                    @include('components.alert-errors')
+                    @include('components.alert-warning')
+
+                    @yield('content')
+                </div>
+            </div>
         </main>
         <!-- ===== Main Content End ===== -->
       </div>
