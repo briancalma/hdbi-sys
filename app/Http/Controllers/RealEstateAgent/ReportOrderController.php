@@ -4,6 +4,7 @@ namespace App\Http\Controllers\RealEstateAgent;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ReportOrderController extends Controller
 {
@@ -26,6 +27,18 @@ class ReportOrderController extends Controller
     public function showStep1()
     {
         return view('real-estate-agent.report-orders.report-order-form.step-1');
+    }
+
+    public function storeStep1(Request $request)
+    {
+        $request->validate([
+            'address' => 'required|string|max:255',
+        ]);
+
+        // Store data in session
+        Session::put('order.address', $request->address);
+
+        return redirect()->route('real-estate-agent.report-orders.create.step-2'); // Redirect to step 2 (not impl
     }
 
     public function showStep2()

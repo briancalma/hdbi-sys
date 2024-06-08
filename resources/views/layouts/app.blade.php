@@ -60,4 +60,5 @@
     </div>
     <!-- ===== Page Wrapper End ===== -->
     <script defer src="{{ asset('build/bundle.js') }}"></script></body>
+    @yield('scripts')
 </html>
