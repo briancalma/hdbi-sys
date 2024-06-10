@@ -63,7 +63,7 @@
                 <div class="w-full">
                     <label for="checkboxLabelOne" class="flex cursor-pointer select-none items-center text-sm font-medium">
                     <div class="relative">
-                        <input name="order_have_second_dwelling" type="checkbox" id="checkboxLabelOne" class="sr-only" @change="checkboxToggle = !checkboxToggle">
+                        <input name="order_have_second_dwelling" type="checkbox" id="checkboxLabelOne" class="sr-only" @change="checkboxToggle = !checkboxToggle" value="true">
                         <div :class="checkboxToggle &amp;&amp; 'border-primary bg-gray dark:bg-transparent'" class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
                             <span :class="checkboxToggle &amp;&amp; '!opacity-100'" class="opacity-0">
                               <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,8 +164,8 @@
                             type="text"
                             placeholder="Enter Contact Mobile Number"
                             class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                            name="order_mobile_number"
-                            value="{{ old('order_mobile_number') }}"
+                            name="order_contact_mobile_number"
+                            value="{{ old('order_contact_mobile_number') }}"
                         />
                     </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\RealEstateAgent;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RealEstateAgent\CreateOrderDetailsFormRequest;
 use App\Models\HandlingTime;
 use App\Models\OrderType;
 use Illuminate\Http\Request;
@@ -54,14 +55,8 @@ class ReportOrderController extends Controller
         );
     }
 
-    public function storeStep2(Request $request)
+    public function storeStep2(CreateOrderDetailsFormRequest $request)
     {
-        return $request->all();
-
-        // $request->validate([
-        //     'address' => 'required|string|max:255',
-        // ]);
-
         // // Store data in session
         // Session::put('order.address', $request->address);
 
