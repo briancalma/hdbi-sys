@@ -12,7 +12,7 @@
 
                     <span class="mt-15 inline-block">
                     <img
-                        src="{{ asset('build/src/images/illustration/illustration-03.svg')}}"
+                        src="{{ asset('images/illustration/illustration-03.svg')}}"
                         alt="illustration"
                     />
                     </span>

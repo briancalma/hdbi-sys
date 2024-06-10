@@ -98,7 +98,7 @@
                 </span>
 
                 <span class="h-12 w-12 rounded-full">
-                    <img src="{{ asset('build/src/images/user/user-01.png') }}" alt="User" />
+                    <img src="{{ asset('images/user/user-01.png') }}" alt="User" />
                 </span>
 
                 <svg

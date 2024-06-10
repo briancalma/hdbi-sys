@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ config('app.name') }}</title>
         <link rel="icon" href="favicon.ico">
-        <link href="{{ asset('build/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('style.css') }}" rel="stylesheet">
     </head>
 
     <body
@@ -43,5 +43,5 @@
         <!-- ===== Content Area End ===== -->
     </body>
     <!-- ===== Page Wrapper End ===== -->
-  <script defer src="{{ asset('build/bundle.js') }}"></script></body>
+  <script defer src="{{ asset('bundle.js') }}"></script></body>
 </html>
