@@ -57,10 +57,29 @@ class ReportOrderController extends Controller
 
     public function storeStep2(CreateOrderDetailsFormRequest $request)
     {
-        // // Store data in session
-        // Session::put('order.address', $request->address);
-
-        // return redirect()->route('real-estate-agent.report-orders.create.step-2'); // Redirect to step 2 (not impl
+        $validated = $request->validated();        
+        
+        // Store data in session
+        Session::put('order.order_notes', $validated['order_notes']);        
+        Session::put('order.order_total_rooms', $validated['order_total_rooms']);
+        Session::put('order.order_type_id', $validated['order_type_id']);
+        // Session::put('order.order_have_second_dwelling', $validated['order_have_second_dwelling']);
+        Session::put('order.order_dwelling_notes', $validated['order_dwelling_notes']);
+        Session::put('order.order_handling_time_id', $validated['order_handling_time_id']);
+        Session::put('order.order_preferred_contact', $validated['order_preferred_contact']);
+        
+        if($validated['order_preferred_contact'] != 'Self') {
+            Session::put('order.order_contact_name', $validated['order_contact_name']);
+            Session::put('order.order_contact_email', $validated['order_contact_name']);
+            Session::put('order.order_contact_mobile_number', $validated['order_contact_mobile_number']);
+        } else {
+            Session::put('order.order_contact_name', auth()->user()->name);
+            Session::put('order.order_contact_email', auth()->user()->email);
+            // TODO: Uncomment this line when mobile number is added to the user table
+            // Session::put('order.order_contact_mobile_number', auth()->user()->mobile_number);
+        }
+        
+        return redirect()->route('real-estate-agent.report-orders.create.step-3'); 
     }
 
     public function showStep3()
