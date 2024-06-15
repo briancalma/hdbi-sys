@@ -17,9 +17,9 @@ class ConfigurationController extends Controller
      */
     public function index()
     {
-        $configurations = \App\Models\Configuration::query()->paginate(10);
-
-        return view('root.configurations.index', compact('configurations'));
+        // $configurations = \App\Models\Configuration::query()->paginate(10);
+        // return view('root.configurations.index', compact('configurations'));
+        return view('root.configurations.index');
     }
 
     /**
