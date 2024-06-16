@@ -40,6 +40,9 @@
                         @yield('action')
                     </div>
                     <div class="flex flex-col gap-9"> 
+                        
+                        <x-alerts/>
+
                         @yield('content')
                     </div>
                 </div>
