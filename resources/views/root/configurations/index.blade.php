@@ -15,7 +15,7 @@
             <livewire:root.configs-table />
             <!-- ====== Table Section End -->
             <livewire:root.create-config-modal />
-
+            <livewire:root.update-config-modal />
             <livewire:root.delete-config-modal />
         </div>
     </div>

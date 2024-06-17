@@ -22,4 +22,9 @@ class ConfigsTable extends Component
             'configs' => $configs
         ]);
     }
+
+    public function triggerEditConfigModal($configId)
+    {
+        $this->dispatch('edit-config', $configId);
+    }
 }
