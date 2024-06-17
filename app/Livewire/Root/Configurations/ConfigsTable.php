@@ -1,12 +1,8 @@
 <?php
 
-namespace App\Livewire\Root;
+namespace App\Livewire\Root\Configurations;
 
 use App\Models\Configuration;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Livewire\Attributes\On;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,8 +14,8 @@ class ConfigsTable extends Component
     {
         $configs = Configuration::simplePaginate(5);
 
-        return view('livewire.root.configs-table', [
-            'configs' => $configs
+        return view('livewire.root.configurations.configs-table', [
+            'configs' => $configs   
         ]);
     }
 

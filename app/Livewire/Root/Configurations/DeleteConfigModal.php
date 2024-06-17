@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Livewire\Root;
+namespace App\Livewire\Root\Configurations;
 
 use App\Models\Configuration;
 use Livewire\Component;
 
 class DeleteConfigModal extends Component
 {
-    public function render()
-    {
-        return view('livewire.root.delete-config-modal');
-    }
-
     public function deleteConfig($id)
     {
         $config = Configuration::find($id);
@@ -29,4 +24,8 @@ class DeleteConfigModal extends Component
         );
     }
 
+    public function render()
+    {
+        return view('livewire.root.configurations.delete-config-modal');
+    }
 }

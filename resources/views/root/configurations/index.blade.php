@@ -12,11 +12,11 @@
         
         <div>
             <!-- ====== Table Section Start -->
-            <livewire:root.configs-table />
+            <livewire:root.configurations.configs-table />
             <!-- ====== Table Section End -->
-            <livewire:root.create-config-modal />
-            <livewire:root.update-config-modal />
-            <livewire:root.delete-config-modal />
+            <livewire:root.configurations.create-config-modal />
+            <livewire:root.configurations.update-config-modal />
+            <livewire:root.configurations.delete-config-modal />
         </div>
     </div>
 @endsection

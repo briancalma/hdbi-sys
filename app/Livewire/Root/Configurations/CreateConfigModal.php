@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Livewire\Root;
+namespace App\Livewire\Root\Configurations;
 
 use App\Models\Configuration;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class CreateConfigModal extends Component
@@ -35,6 +34,6 @@ class CreateConfigModal extends Component
 
     public function render()
     {
-        return view('livewire.root.create-config-modal');
+        return view('livewire.root.configurations.create-config-modal');
     }
 }

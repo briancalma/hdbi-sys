@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Livewire\Root;
+namespace App\Livewire\Root\Configurations;
 
 use App\Models\Configuration;
-use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class UpdateConfigModal extends Component
 {
-
     public string $key;   
     public string $type;
     public string $value;   
@@ -36,13 +34,12 @@ class UpdateConfigModal extends Component
 
         $this->redirect(route('root.configurations.index'), navigate: true);
     }
-
-
+    
     public function render()
     {
-        return view('livewire.root.update-config-modal');
+        return view('livewire.root.configurations.update-config-modal');
     }
-    
+
     #[On('config-edit')] 
     public function setConfig($configId)
     {
