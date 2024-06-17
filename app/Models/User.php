@@ -63,7 +63,7 @@ class User extends Authenticatable
      */
     public function getRoleNameAttribute(): string
     {
-        return $this->roles()->first()->name;
+        return $this->roles()->first()?->name;
     }
 
     /**

@@ -12,9 +12,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {   
-        /** 
-         * Uncomment line below to generate random users
-            $faker = \Faker\Factory::create() 
+
+        if(config('app.env') !== 'production') {
+            $faker = \Faker\Factory::create();
+            
             for ($i = 0; $i < 20; $i++) {
                 $_user = [
                     'first_name' => $faker->firstName,
@@ -29,7 +30,7 @@ class UsersTableSeeder extends Seeder
                 $user = \App\Models\User::create($userData);
                 $user->assignRole($_user['role']);
             } 
-        */
+        }
 
         $users = [
             [
