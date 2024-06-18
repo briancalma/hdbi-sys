@@ -19,7 +19,7 @@
         <div class="p-1 my-3">
             <div class="mb-5 flex flex-col gap-6 xl:flex-row">
                 <div class="w-full">
-                    <x-input-text name="key" wire:model="key" placeholder="Enter key" required/>
+                    <x-input-text label="Key" name="key" wire:model="key" placeholder="Enter key" required/>
                 </div>
             </div>
 
@@ -32,16 +32,18 @@
                         <option value="" class="text-body">
                             Select Type
                         </option>
-                        <option value="integer" class="text-body" {{ old('type') === 'integer' ? 'selected' : '' }}>integer</option>
-                        <option value="string" class="text-body" {{ old('type') === 'string' ? 'selected' : '' }}>string</option>
-                        <option value="boolean" class="text-body" {{ old('type') === 'boolean' ? 'selected' : '' }}>boolean</option>
+                        <option value="integer" class="text-body">integer</option>
+                        <option value="string" class="text-body">string</option>
+                        <option value="boolean" class="text-body">boolean</option>
                     </select> 
+
+                    <div class="text-danger text-sm">@error($type) {{ $message }} @enderror</div>
                 </div>
             </div>
 
             <div class="mb-5 flex flex-col gap-6 xl:flex-row">
                 <div class="w-full">
-                    <x-input-text name="value" wire:model="value" placeholder="Enter config value" required/>
+                    <x-input-text label="Value" name="value" wire:model="value" placeholder="Enter config value" required/>
                 </div>
             </div>
             
