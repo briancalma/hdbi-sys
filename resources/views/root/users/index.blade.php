@@ -16,6 +16,7 @@
         <livewire:root.users.create-user-modal />
         <livewire:root.users.update-user-modal />
         <livewire:root.users.delete-user-modal />
+        <livewire:root.users.activate-user-modal />
     </div>
  </div>
 
