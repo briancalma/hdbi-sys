@@ -11,16 +11,28 @@ class DeleteUserModal extends Component
     {
         $user = User::findOrFail($userId);
 
-        $user->update([
-            'status' => User::STATUS_DEACTIVED
-        ]);
+        try {
+            $user->update([
+                'status' => User::STATUS_DEACTIVED
+            ]);
+    
+            request()->session()->flash('warning', 'User was deactivated successfully.');
+    
+            $this->redirect(
+                url: route('root.users.index'), 
+                navigate: true
+            );
+        }
+        catch(\Exception $e) {
+            request()->session()->flash('warning', 'Failed to deactivate user.');
 
-        request()->session()->flash('warning', 'User was deactivated successfully.');
+            $this->redirect(
+                url: route('root.users.index'), 
+                navigate: true
+            );
+        }
 
-        $this->redirect(
-            url: route('root.users.index'), 
-            navigate: true
-        );
+        
     }
 
     public function render()

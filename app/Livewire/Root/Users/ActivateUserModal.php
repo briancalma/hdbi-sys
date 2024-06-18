@@ -3,14 +3,16 @@
 namespace App\Livewire\Root\Users;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class ActivateUserModal extends Component
 {
     public function activateUser($userId)
     {   
+        $user = User::findOrFail($userId);
+
         try {
-            $user = User::findOrFail($userId);
 
             $user->update([
                 'status' => User::STATUS_ACTIVE
@@ -24,7 +26,7 @@ class ActivateUserModal extends Component
             );
         }
         catch(\Exception $e) {
-            request()->session()->flash('warning', 'Cannot activate user.');
+            request()->session()->flash('warning', 'Failed to activate user.');
 
             $this->redirect(
                 url: route('root.users.index'), 
