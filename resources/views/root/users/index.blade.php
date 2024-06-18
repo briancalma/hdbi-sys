@@ -15,6 +15,7 @@
     <div>
         <livewire:root.users.users-table />
         <livewire:root.users.create-user-modal />
+        <livewire:root.users.update-user-modal />
     </div>
  </div>
 
