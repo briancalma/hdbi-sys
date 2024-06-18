@@ -16,6 +16,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasRoles, SoftDeletes;
 
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_DEACTIVED = 'deactive';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,6 +29,7 @@ class User extends Authenticatable
         'last_name',
         'email',
         'password',
+        'status'
     ];
 
     /**
