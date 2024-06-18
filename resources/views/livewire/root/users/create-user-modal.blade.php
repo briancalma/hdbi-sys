@@ -3,6 +3,7 @@
     x-transition 
     class="fixed left-0 top-0 z-99999 flex h-screen w-full justify-center overflow-y-scroll bg-black/80 px-4 py-5"
     x-on:config-created="modalOpen = false; modal = '';">
+
   <div @click.outside="modalOpen = false; modal = '';"  class="relative m-auto w-full max-w-180 rounded-sm border border-stroke bg-gray shadow-default dark:border-strokedark dark:bg-meta-4 sm:p-8">
     
     <div class="flex flex-row items-center justify-between mb-2">
@@ -10,7 +11,7 @@
             New Create User Form
         </h3>
 
-        <button @click="modalOpen = false">
+        <button @click="modalOpen = false; modal = '';">
             <x-icons.close :width="15" :height="15"/>
         </button>
     </div>

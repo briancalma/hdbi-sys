@@ -10,7 +10,7 @@
             Update User Form
         </h3>
 
-        <button @click="modalOpen = false">
+        <button @click="modalOpen = false; modal = '';">
             <x-icons.close :width="15" :height="15"/>
         </button>
     </div>
