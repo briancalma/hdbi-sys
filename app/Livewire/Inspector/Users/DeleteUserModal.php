@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Root\Users;
+namespace App\Livewire\Inspector\Users;
 
 use App\Models\User;
 use Livewire\Component;
@@ -19,7 +19,7 @@ class DeleteUserModal extends Component
             request()->session()->flash('warning', 'User was deactivated successfully.');
     
             $this->redirect(
-                url: route('root.users.index'), 
+                url: route('inspector.users.index'), 
                 navigate: true
             );
         }
@@ -27,14 +27,15 @@ class DeleteUserModal extends Component
             request()->session()->flash('warning', 'Failed to deactivate user.');
 
             $this->redirect(
-                url: route('root.users.index'), 
+                url: route('inspector.users.index'), 
                 navigate: true
             );
         }
     }
 
+
     public function render()
     {
-        return view('livewire.root.users.delete-user-modal');
+        return view('livewire.inspector.users.delete-user-modal');
     }
 }

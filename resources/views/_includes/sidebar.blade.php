@@ -7,9 +7,8 @@
                 <img src="{{ asset('images/logo/logo.svg') }}" alt="Logo" />
             </a>
 
-            <button
-            class="block lg:hidden"
-            @click.stop="sidebarToggle = !sidebarToggle"
+            <button class="block lg:hidden"
+                @click.stop="sidebarToggle = !sidebarToggle"
             >
             <svg
                 class="fill-current"
@@ -120,7 +119,9 @@
                                 <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
                                     href="{{ route('inspector.dashboard') }}"
                                     @click="selected = (selected === 'Dashboard' ? '':'Dashboard')"
-                                    :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Dashboard') && (page === 'calendar') }">
+                                    :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Dashboard') && (page === 'calendar') }"
+                                    wire:navigate
+                                >
                                     <svg
                                         class="fill-current"
                                         width="18"
@@ -148,6 +149,7 @@
                                     @click="selected = (selected === 'Profile' ? '':'Profile')"
                                     :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Profile') && (page === 'profile') }"
                                     :class="page === 'profile' && 'bg-graydark'"
+                                    wire:navigate
                                 >
                                 <svg
                                     class="fill-current"
