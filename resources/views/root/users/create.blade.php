@@ -68,7 +68,6 @@
                         <option value="Inspector" class="text-body" {{ old('role') === 'Inspector' ? 'selected' : '' }}>Inspector</option>
                         <option value="Real Estate Agent" class="text-body" {{ old('role') === 'Real Estate Agent' ? 'selected' : '' }}>Real Estate Agent</option>
                     </select>
-                    </select>
                 </div>
             </div>
 
