@@ -40,7 +40,7 @@ class CreateUserModal extends Component
             $this->redirect(route('root.users.index'), navigate: true);
         }
         catch(\Exception $e) {
-            request()->session()->flash('errors', 'Failed to add user. Please try again.');
+            request()->session()->flash('errors', ['Failed to add user. Please try again.']);
 
             $this->redirect(route('root.users.index'), navigate: true);
         }
